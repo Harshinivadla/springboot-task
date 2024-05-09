@@ -2,6 +2,7 @@ package com.example.task.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,11 +11,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-
-public class MPin {
+@Table(name = "Album_RESTClient")
+public class AlbumClient {
 
     @Id
-    private String username;
+    private int id;
 
-    private Integer mpin;
+    private int userId;
+
+    private String title;
 }

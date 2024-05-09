@@ -50,8 +50,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(requests -> requests
-                        .requestMatchers("/contact/authenticate/username-password", "/contact/authenticate/m-pin", "/contact/authenticate/bio-id", "/contact/authenticate/randomUDID").permitAll())
-                .authorizeHttpRequests(requests -> requests
+                        .requestMatchers("/contact/authenticate/username-password", "/contact/authenticate/m-pin", "/contact/authenticate/bio-id", "/contact/authenticate/randomUDID","/contact/password","/contact/mpin","/contact/bioId").permitAll()
                         .requestMatchers("/contact").authenticated())
                 .sessionManagement(management -> management
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
