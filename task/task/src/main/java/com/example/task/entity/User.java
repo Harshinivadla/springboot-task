@@ -1,11 +1,12 @@
 package com.example.task.entity;
 
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -19,5 +20,10 @@ public class User {
     private String username;
 
     private String password;
+
+    private String newPassword;
+
+    @ElementCollection
+    private List<String> passwordHistory;
 
 }
