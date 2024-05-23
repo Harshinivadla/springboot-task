@@ -9,7 +9,6 @@ import com.example.task.entity.BioId;
 import com.example.task.entity.MPin;
 import com.example.task.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.http.HttpStatus;
@@ -143,7 +142,7 @@ public class AuthenticationService {
         return ResponseEntity.ok("Password changed successfully");
     }
 
-    private boolean isNewPasswordInHistory(User user, String newPassword) {
+    boolean isNewPasswordInHistory(User user, String newPassword) {
         List<String> passwordHistory = user.getPasswordHistory();
         return passwordHistory != null && passwordHistory.stream().limit(3).anyMatch(oldPassword -> oldPassword.equals(newPassword));
     }

@@ -59,7 +59,7 @@ public class SecurityConfig {
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
-
+                                                                      
     @Bean
     public UserDetailsService userDetailsService() {
         return new UserInfoUserDetailsService();

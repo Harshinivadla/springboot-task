@@ -10,4 +10,6 @@ import java.util.Optional;
 public interface MPinRepository extends JpaRepository<MPin , String> {
 
     Optional<MPin> findByUsername(String username);
+
+    boolean existsByUsername(String username);
 }

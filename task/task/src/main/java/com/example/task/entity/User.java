@@ -6,6 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -23,7 +24,12 @@ public class User {
 
     private String newPassword;
 
+    public User(String username,String password) {
+        this.username = username;
+        this.password = password;
+    }
+
     @ElementCollection
-    private List<String> passwordHistory;
+    private List<String> passwordHistory = new ArrayList<>();
 
 }

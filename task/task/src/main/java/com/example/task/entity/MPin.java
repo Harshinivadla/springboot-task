@@ -16,4 +16,8 @@ public class MPin {
     private String username;
 
     private Integer mpin;
+
+    public String getUsername(String user) {
+        return username;
+    }
 }
